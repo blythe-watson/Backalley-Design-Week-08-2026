@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be73cd7e61f8fe41979686422e5391b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveWASD
-  speed: 0
+  speed: 0.01
 --- !u!50 &9354971
 Rigidbody2D:
   serializedVersion: 5
@@ -1187,7 +1187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7713b970ff021409895be3b9492f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveArrows
-  speed: 0.03
+  speed: 0.01
 --- !u!50 &2072753789
 Rigidbody2D:
   serializedVersion: 5
