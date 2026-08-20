@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 9354967}
   - component: {fileID: 9354970}
   - component: {fileID: 9354971}
+  - component: {fileID: 9354972}
   m_Layer: 0
   m_Name: Ant (WASD)
   m_TagString: Untagged
@@ -261,7 +262,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be73cd7e61f8fe41979686422e5391b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveWASD
-  speed: 0.01
+  WASDAnt: {fileID: 9354971}
+  WASDAntCollider: {fileID: 9354967}
+  WASDAntRenderer: {fileID: 9354968}
+  maxSpeedX: 8
+  maxSpeedY: 8
+  accelTime: 0.1
+  decelTime: 0.1
+  direction: 0
 --- !u!50 &9354971
 Rigidbody2D:
   serializedVersion: 5
@@ -288,7 +296,21 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &9354972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9354965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ed17efefdaf9774da099760b7495fb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::wasdDirections
+  WASDAntRenderer: {fileID: 9354968}
+  moveWASDScript: {fileID: 9354970}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,9 +886,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_Mass: 10
+  m_LinearDamping: 20
+  m_AngularDamping: 10
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -877,7 +899,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &1785587105
 GameObject:
@@ -1058,6 +1080,7 @@ GameObject:
   - component: {fileID: 2072753785}
   - component: {fileID: 2072753788}
   - component: {fileID: 2072753789}
+  - component: {fileID: 2072753790}
   m_Layer: 0
   m_Name: Ant (Arrows)
   m_TagString: Untagged
@@ -1187,7 +1210,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d7713b970ff021409895be3b9492f30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveArrows
-  speed: 0.01
+  arrowAnt: {fileID: 2072753789}
+  arrowAntCollider: {fileID: 2072753785}
+  arrowAntRenderer: {fileID: 2072753786}
+  maxSpeedX: 8
+  maxSpeedY: 8
+  accelTime: 0.1
+  decelTime: 0.1
+  direction: 0
 --- !u!50 &2072753789
 Rigidbody2D:
   serializedVersion: 5
@@ -1214,7 +1244,21 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &2072753790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072753784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b5ebfb5116248488e2d9ba5e2cbc42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArrowDirections
+  arrowAntRenderer: {fileID: 2072753786}
+  moveArrowsScript: {fileID: 2072753788}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
